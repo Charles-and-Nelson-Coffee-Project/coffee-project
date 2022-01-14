@@ -23,8 +23,8 @@ let coffees = function () {
 }();
 
 function renderCoffee(coffee) {
-    let html = '<div class= "col-6 col-md-3 beers">'
-    html += '<div><h2>' + coffee.name + '</h2></div><hr><div><h3>' + coffee.roast + '</h3></div></div>';
+    let html = '<div class= "col-6 col-md-4 col-lg-3 coffee-box m-0 p-3">'
+    html += '<div><h2>' + coffee.name + '</h2></div><hr><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img src="assets/dark-roast.jpeg" class="img-fluid"></div></div>';
 
     return html;
 }
