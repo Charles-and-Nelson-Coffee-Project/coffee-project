@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Coffee!</h1>
-    <h2>It's What's For Breakfast$$</h2>
+    <h2>It's not just for breakfast anymore...</h2>
 
 
     <form>
@@ -22,8 +22,20 @@
     </form>
     <br>
     <form>
-        <label for="coffeeName"></label>
+        <label for="coffeeName">Search by name</label>
         <input type="text" id="coffeeName" onkeyup="searchForCoffee()">
+    </form>
+    <br>
+    <form>
+        <label for="newCoffee">Add a new coffee</label>
+        <input type="text" id="newCoffee" placeholder="New coffee name">
+        <select id="selectRoast">
+            <option disabled selected>Pick a roast</option>
+            <option value="light">light</option>
+            <option value="medium">medium</option>
+            <option value="dark">dark</option>
+        </select>
+        <input type="button" id="submitCoffee" value="Add it!" onclick="addACoffee()">
     </form>
 
 <!--    <table>-->

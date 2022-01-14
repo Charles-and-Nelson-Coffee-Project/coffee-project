@@ -28,22 +28,30 @@ function updateCoffees() {
             }
         })
         tbody.innerHTML = renderCoffees(filteredCoffees);
-
     }
-
-
 }
 
-function searchForCoffee(){
+function searchForCoffee() {
     let searchedForCoffee = document.querySelector('#coffeeName').value.toLowerCase();
     let searchedCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.name.toLowerCase().startsWith(searchedForCoffee)){
+    coffees.forEach(function (coffee) {
+        if (coffee.name.toLowerCase().startsWith(searchedForCoffee)) {
             searchedCoffees.push(coffee);
         }
     })
     tbody.innerHTML = renderCoffees(searchedCoffees);
+}
 
+function addACoffee() {
+    let newCoffeeInfo = {};
+    let newName = newCoffeeName.value;
+    let newRoast = newCoffeeRoast.value;
+    newCoffeeInfo.id = coffees.length + 1;
+    newCoffeeInfo.name = newName;
+    newCoffeeInfo.roast = newRoast;
+    coffees.push(newCoffeeInfo);
+    tbody.innerHTML = renderCoffees(coffees);
+    localStorage.setItem('coffees', JSON.stringify(coffees));
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -64,7 +72,8 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-
+let newCoffeeName = document.querySelector('#newCoffee');
+let newCoffeeRoast = document.querySelector('#selectRoast');
 let tbody = document.querySelector('#coffees');
 let roastSelection = document.querySelector('#roast-selection');
 
