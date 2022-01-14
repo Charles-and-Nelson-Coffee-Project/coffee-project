@@ -4,7 +4,7 @@ let coffees = function () {
         return JSON.parse(localStorage.getItem("coffees"));
     } else {
         return [
-            {id: 1, name: 'Light City', roast: 'light', image: "/light-roast-coffee-bean.jpeg"},
+            {id: 1, name: 'Light City', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
             {id: 2, name: 'Half City', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
             {id: 3, name: 'Folgers', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
             {id: 4, name: 'Double Light', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
