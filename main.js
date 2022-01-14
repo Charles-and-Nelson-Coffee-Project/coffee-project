@@ -34,6 +34,18 @@ function updateCoffees() {
 
 }
 
+function searchForCoffee(){
+    let searchedForCoffee = document.querySelector('#coffeeName').value.toLowerCase();
+    let searchedCoffees = [];
+    coffees.forEach(function(coffee) {
+        if (coffee.name.toLowerCase().startsWith(searchedForCoffee)){
+            searchedCoffees.push(coffee);
+        }
+    })
+    tbody.innerHTML = renderCoffees(searchedCoffees);
+
+}
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
