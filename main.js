@@ -46,7 +46,7 @@ function resetArray() {
 
 function renderCoffee(coffee) {
     let html = '<div class="coffee-box my-2 p-3 mx-0 mx-sm-auto">'
-    html += '<div><h2 class="font-weight-bold">' + coffee.name + '</h2></div><hr><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div></div>';
+    html += '<div><h2 class="font-weight-bold">' + coffee.name + '</h2></div><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div></div>';
 
     return html;
 }
@@ -90,6 +90,13 @@ function addACoffee() {
     let newCoffeeInfo = {};
     let newName = newCoffeeName.value;
     let newRoast = newCoffeeRoast.value;
+    let newIndex = function () {
+        for (let i = 0; i < coffees.length; i++) {
+            if (coffees[i].roast === 'medium') {
+                return i;
+            }
+        }
+    }();
     newCoffeeInfo.id = coffees.length + 1;
     newCoffeeInfo.name = newName;
     newCoffeeInfo.roast = newRoast;
@@ -103,7 +110,7 @@ function addACoffee() {
         coffees.unshift(newCoffeeInfo);
     } else if (newRoast === 'medium') {
         newCoffeeInfo.image = "medium-roasts-coffee-bean.jpeg"
-        coffees.splice((coffees.length / 2), 0, newCoffeeInfo);
+        coffees.splice(newIndex, 0, newCoffeeInfo);
     } else {
         newCoffeeInfo.image = "dark-roast.jpeg"
         coffees.push(newCoffeeInfo);
