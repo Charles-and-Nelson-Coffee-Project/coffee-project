@@ -106,6 +106,10 @@ function addACoffee() {
     location.reload();
 }
 
+function laughSound(){
+    let haHa = new Audio("assets/the-simpsons-nelsons-haha.mp3");
+    haHa.play();
+}
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 // let coffees = [
 //     {id: 1, name: 'Light City', roast: 'light'},
