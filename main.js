@@ -76,6 +76,7 @@ function resetArray() {
     location.reload();
 }
 
+// THIS CREATES AN HTML STRING FOR EACH BEER RUN THROUGH IT
 function renderCoffee(coffee) {
     let html = '<div class="coffee-box my-2 p-3 mx-0 mx-sm-auto">'
     html += '<div><h2 class="font-weight-bold">' + coffee.name + '</h2></div><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div><div>' + coffee.origin + '</div></div>';
@@ -83,6 +84,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+// THIS RUNS EACH BEER THROUGH THE ABOVE FUNCTION
 function renderCoffees(coffees) {
     let html = '';
     for (let i = 0; i < coffees.length; i++) {
@@ -91,6 +93,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+// THIS IS THE DROPDOWN
 function updateCoffees() {
     let selectedRoast = roastSelection.value;
     console.log(selectedRoast);
@@ -107,6 +110,7 @@ function updateCoffees() {
     }
 }
 
+// THIS IS THE NAME SEARCH
 function searchForCoffee() {
     let searchedForCoffee = document.querySelector('#coffeeName').value.toLowerCase();
     let searchedCoffees = [];
@@ -118,11 +122,13 @@ function searchForCoffee() {
     tbody.innerHTML = renderCoffees(searchedCoffees);
 }
 
+// ADD A COFFEE
 function addACoffee() {
     let newCoffeeInfo = {};
     let newName = newCoffeeName.value;
     let newRoast = newCoffeeRoast.value;
     let newOrigin = newCoffeeOrigin.value;
+    // THIS NEXT FUNCTION MAKES SURE MEDIUM NEW COFFEES GET PUT IN WITH THE MEDIUMS
     let newIndex = function () {
         for (let i = 0; i < coffees.length; i++) {
             if (coffees[i].roast === 'medium') {
@@ -130,10 +136,13 @@ function addACoffee() {
             }
         }
     }();
+
     newCoffeeInfo.id = coffees.length + 1;
     newCoffeeInfo.name = newName;
     newCoffeeInfo.origin = newOrigin;
     newCoffeeInfo.roast = newRoast;
+
+    // THESE NEXT THREE IFs REJECT NEW COFFEES WITH NO NAME, ROAST, OR ORIGIN
     if (newName === "") {
         return;
     }
@@ -143,6 +152,7 @@ function addACoffee() {
     if (newOrigin === "") {
         return;
 
+        // AND NOW WE ASSIGN AN IMAGE TO EACH ONE BASED ON ITS SELECTED ROAST
     } else if (newRoast === 'light') {
         newCoffeeInfo.image = "light-roast-coffee-bean.jpeg"
         coffees.unshift(newCoffeeInfo);
@@ -154,39 +164,25 @@ function addACoffee() {
         coffees.push(newCoffeeInfo);
     }
 
+    // RENDER THE COFFEES WITH THE NEW ONE INCLUDED, SEND THE ARRAY TO LOCALSTORAGE, AND RELOAD
     tbody.innerHTML = renderCoffees(coffees);
     localStorage.setItem('coffees', JSON.stringify(coffees));
     location.reload();
 }
 
+// LOL
 function laughSound() {
     let haHa = new Audio("assets/the-simpsons-nelsons-haha.mp3");
     haHa.play();
 }
 
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-// let coffees = [
-//     {id: 1, name: 'Light City', roast: 'light'},
-//     {id: 2, name: 'Half City', roast: 'light'},
-//     {id: 3, name: 'Cinnamon', roast: 'light'},
-//     {id: 4, name: 'City', roast: 'medium'},
-//     {id: 5, name: 'American', roast: 'medium'},
-//     {id: 6, name: 'Breakfast', roast: 'medium'},
-//     {id: 7, name: 'High', roast: 'dark'},
-//     {id: 8, name: 'Continental', roast: 'dark'},
-//     {id: 9, name: 'New Orleans', roast: 'dark'},
-//     {id: 10, name: 'European', roast: 'dark'},
-//     {id: 11, name: 'Espresso', roast: 'dark'},
-//     {id: 12, name: 'Viennese', roast: 'dark'},
-//     {id: 13, name: 'Italian', roast: 'dark'},
-//     {id: 14, name: 'French', roast: 'dark'},
-// ];
-
+// QUERY SELECTOR ALLEY
 let newCoffeeName = document.querySelector('#newCoffee');
 let newCoffeeRoast = document.querySelector('#selectRoast');
 let newCoffeeOrigin = document.querySelector('#selectOrigin');
 let tbody = document.querySelector('#coffees');
 let roastSelection = document.querySelector('#roast-selection');
 
+// THIS GETS THE WHOLE THING STARTED ON RELOAD BY CALLING THE FUNCTION AND PLACING THE RETURN IN HTML
 tbody.innerHTML = renderCoffees(coffees);
 

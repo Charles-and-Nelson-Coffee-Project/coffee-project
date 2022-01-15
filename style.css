@@ -24,7 +24,6 @@
     background: -moz-radial-gradient(circle, hsla(42, 100%, 95%, 1) 0%, hsla(42, 100%, 95%, 1) 63%, hsla(31, 100%, 24%, 0.6) 100%);
     background: -webkit-radial-gradient(circle, hsla(42, 100%, 95%, 1) 0%, hsla(42, 100%, 95%, 1) 63%, hsla(31, 100%, 24%, 0.6) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFF8E7", endColorstr="#FFF8E7", GradientType=1);
-
 }
 
 img {
