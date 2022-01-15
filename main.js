@@ -30,14 +30,14 @@ let coffees = function () {
 }();
 
 // THIS FUNCTION RESETS LOCALSTORAGE AND RELOADS THE PAGE
-function resetArray(){
+function resetArray() {
     window.localStorage.removeItem('coffees');
     location.reload();
 }
 
 function renderCoffee(coffee) {
-    let html = '<div class="col-6 col-lg-3 coffee-box m-0 p-3">'
-    html += '<div><h2>' + coffee.name + '</h2></div><hr><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div></div>';
+    let html = '<div class="coffee-box my-2 p-3 mx-0 mx-sm-auto">'
+    html += '<div><h2 class="font-weight-bold">' + coffee.name + '</h2></div><hr><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div></div>';
 
     return html;
 }
@@ -84,19 +84,18 @@ function addACoffee() {
     newCoffeeInfo.id = coffees.length + 1;
     newCoffeeInfo.name = newName;
     newCoffeeInfo.roast = newRoast;
-    if(newName === ""){
+    if (newName === "") {
         return;
     }
-    if(newRoast === ""){
+    if (newRoast === "") {
         return;
-    }
-    else if (newRoast === 'light'){
+    } else if (newRoast === 'light') {
         newCoffeeInfo.image = "light-roast-coffee-bean.jpeg"
         coffees.unshift(newCoffeeInfo);
-    }else if (newRoast === 'medium'){
+    } else if (newRoast === 'medium') {
         newCoffeeInfo.image = "medium-roasts-coffee-bean.jpeg"
         coffees.splice((coffees.length / 2), 0, newCoffeeInfo);
-    }else {
+    } else {
         newCoffeeInfo.image = "dark-roast.jpeg"
         coffees.push(newCoffeeInfo);
     }
@@ -106,10 +105,11 @@ function addACoffee() {
     location.reload();
 }
 
-function laughSound(){
+function laughSound() {
     let haHa = new Audio("assets/the-simpsons-nelsons-haha.mp3");
     haHa.play();
 }
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 // let coffees = [
 //     {id: 1, name: 'Light City', roast: 'light'},
