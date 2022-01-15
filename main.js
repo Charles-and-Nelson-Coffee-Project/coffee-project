@@ -84,14 +84,23 @@ function addACoffee() {
     newCoffeeInfo.id = coffees.length + 1;
     newCoffeeInfo.name = newName;
     newCoffeeInfo.roast = newRoast;
-    if (newRoast === 'light'){
+    if(newName === ""){
+        return;
+    }
+    if(newRoast === ""){
+        return;
+    }
+    else if (newRoast === 'light'){
         newCoffeeInfo.image = "light-roast-coffee-bean.jpeg"
+        coffees.unshift(newCoffeeInfo);
     }else if (newRoast === 'medium'){
         newCoffeeInfo.image = "medium-roasts-coffee-bean.jpeg"
+        coffees.splice((coffees.length / 2), 0, newCoffeeInfo);
     }else {
         newCoffeeInfo.image = "dark-roast.jpeg"
+        coffees.push(newCoffeeInfo);
     }
-    coffees.push(newCoffeeInfo);
+
     tbody.innerHTML = renderCoffees(coffees);
     localStorage.setItem('coffees', JSON.stringify(coffees));
     location.reload();
