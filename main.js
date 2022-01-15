@@ -79,7 +79,7 @@ function addACoffee() {
     newCoffeeInfo.name = newName;
     newCoffeeInfo.roast = newRoast;
     if (newRoast === 'light'){
-        newCoffeeInfo.image = "/light-roast-coffee-bean.jpeg"
+        newCoffeeInfo.image = "light-roast-coffee-bean.jpeg"
     }else if (newRoast === 'medium'){
         newCoffeeInfo.image = "medium-roasts-coffee-bean.jpeg"
     }else {
