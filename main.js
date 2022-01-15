@@ -29,6 +29,12 @@ let coffees = function () {
     }
 }();
 
+// THIS FUNCTION RESETS LOCALSTORAGE AND RELOADS THE PAGE
+function resetArray(){
+    window.localStorage.removeItem('coffees');
+    location.reload();
+}
+
 function renderCoffee(coffee) {
     let html = '<div class="col-6 col-md-4 col-lg-3 coffee-box m-0 p-3">'
     html += '<div><h2>' + coffee.name + '</h2></div><hr><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div></div>';
