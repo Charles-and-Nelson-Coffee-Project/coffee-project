@@ -1,39 +1,71 @@
 "use strict"
+
+// THIS FUNCTION GET COFFEES FROM LOCALSTORAGE, OR IF ITS NOT THERE, RETURNS A DEFAULT ARRAY
 let coffees = function () {
     if (localStorage.getItem("coffees") !== null) {
         return JSON.parse(localStorage.getItem("coffees"));
     } else {
         return [
-            {id: 1, name: 'San Antonio Morning', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 2, name: 'Alamo City Blonde', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 3, name: 'Rodeo Drive', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 4, name: 'Pizza Time', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 5, name: 'Light City', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 6, name: 'Half City', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 7, name: 'Folgers', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 8, name: 'Double Light', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 9, name: 'Light Bulb', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 10, name: 'Cinnamon', roast: 'light', image: "light-roast-coffee-bean.jpeg"},
-            {id: 11, name: 'Nitty Gritty', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 12, name: 'Downtown Brown', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 13, name: 'Bye Felicia', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 14, name: 'City', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 15, name: 'American', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 16, name: 'Breakfast', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 17, name: 'Medrano', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 18, name: 'Spicy', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 19, name: 'Pickle Coffee', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 20, name: 'San Antonio', roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
-            {id: 21, name: 'Turkish Delight', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 22, name: 'Maui Wowie', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 23, name: 'High', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 24, name: 'Continental', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 25, name: 'New Orleans', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 26, name: 'European', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 27, name: 'Espresso', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 28, name: 'Viennese', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 29, name: 'Italian', roast: 'dark', image: "dark-roast.jpeg"},
-            {id: 30, name: 'French', roast: 'dark', image: "dark-roast.jpeg"}
+            {
+                id: 1,
+                name: 'San Antonio Morning',
+                origin: "Brazil",
+                roast: 'light',
+                image: "light-roast-coffee-bean.jpeg"
+            },
+            {
+                id: 2,
+                name: 'Alamo City Blonde',
+                origin: "Columbia",
+                roast: 'light',
+                image: "light-roast-coffee-bean.jpeg"
+            },
+            {id: 3, name: 'Rodeo Drive', origin: "Indonesia", roast: 'light', image: "light-roast-coffee-bean.jpeg"},
+            {id: 4, name: 'Pizza Time', origin: "Honduras", roast: 'light', image: "light-roast-coffee-bean.jpeg"},
+            {id: 5, name: 'Light City', origin: "Ethiopia", roast: 'light', image: "light-roast-coffee-bean.jpeg"},
+            {id: 6, name: 'Half City', origin: "Peru", roast: 'light', image: "light-roast-coffee-bean.jpeg"},
+            {id: 7, name: 'Folgers', origin: "Uganda", roast: 'light', image: "light-roast-coffee-bean.jpeg"},
+            {id: 8, name: 'Double Light', origin: "Brazil", roast: 'light', image: "light-roast-coffee-bean.jpeg"},
+            {id: 9, name: 'Light Bulb', origin: "Ecuador", roast: 'light', image: "light-roast-coffee-bean.jpeg"},
+            {id: 10, name: 'Cinnamon', origin: "Indonesia", roast: 'light', image: "light-roast-coffee-bean.jpeg"},
+            {
+                id: 11,
+                name: 'Nitty Gritty',
+                origin: "Honduras",
+                roast: 'medium',
+                image: "medium-roasts-coffee-bean.jpeg"
+            },
+            {
+                id: 12,
+                name: 'Downtown Brown',
+                origin: "Ethiopia",
+                roast: 'medium',
+                image: "medium-roasts-coffee-bean.jpeg"
+            },
+            {id: 13, name: 'Bye Felicia', origin: "Peru", roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
+            {id: 14, name: 'City', origin: "Uganda", roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
+            {id: 15, name: 'American', origin: "Brazil", roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
+            {id: 16, name: 'Breakfast', origin: "Ecuador", roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
+            {id: 17, name: 'Medrano', origin: "Columbia", roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
+            {id: 18, name: 'Spicy', origin: "Indonesia", roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
+            {
+                id: 19,
+                name: 'Pickle Coffee',
+                origin: "Honduras",
+                roast: 'medium',
+                image: "medium-roasts-coffee-bean.jpeg"
+            },
+            {id: 20, name: 'San Antonio', origin: "Ethiopia", roast: 'medium', image: "medium-roasts-coffee-bean.jpeg"},
+            {id: 21, name: 'Turkish Delight', origin: "Peru", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 22, name: 'Maui Wowie', origin: "Uganda", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 23, name: 'High', origin: "Brazil", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 24, name: 'Continental', origin: "Ecuador", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 25, name: 'New Orleans', origin: "Honduras", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 26, name: 'European', origin: "Indonesia", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 27, name: 'Espresso', origin: "Ethiopia", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 28, name: 'Viennese', origin: "Peru", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 29, name: 'Italian', origin: "Columbia", roast: 'dark', image: "dark-roast.jpeg"},
+            {id: 30, name: 'French', origin: "Honduras", roast: 'dark', image: "dark-roast.jpeg"}
         ]
     }
 }();
@@ -46,7 +78,7 @@ function resetArray() {
 
 function renderCoffee(coffee) {
     let html = '<div class="coffee-box my-2 p-3 mx-0 mx-sm-auto">'
-    html += '<div><h2 class="font-weight-bold">' + coffee.name + '</h2></div><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div></div>';
+    html += '<div><h2 class="font-weight-bold">' + coffee.name + '</h2></div><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div><div>' + coffee.origin + '</div></div>';
 
     return html;
 }
@@ -90,6 +122,7 @@ function addACoffee() {
     let newCoffeeInfo = {};
     let newName = newCoffeeName.value;
     let newRoast = newCoffeeRoast.value;
+    let newOrigin = newCoffeeOrigin.value;
     let newIndex = function () {
         for (let i = 0; i < coffees.length; i++) {
             if (coffees[i].roast === 'medium') {
@@ -99,12 +132,17 @@ function addACoffee() {
     }();
     newCoffeeInfo.id = coffees.length + 1;
     newCoffeeInfo.name = newName;
+    newCoffeeInfo.origin = newOrigin;
     newCoffeeInfo.roast = newRoast;
     if (newName === "") {
         return;
     }
     if (newRoast === "") {
         return;
+    }
+    if (newOrigin === "") {
+        return;
+
     } else if (newRoast === 'light') {
         newCoffeeInfo.image = "light-roast-coffee-bean.jpeg"
         coffees.unshift(newCoffeeInfo);
@@ -146,6 +184,7 @@ function laughSound() {
 
 let newCoffeeName = document.querySelector('#newCoffee');
 let newCoffeeRoast = document.querySelector('#selectRoast');
+let newCoffeeOrigin = document.querySelector('#selectOrigin');
 let tbody = document.querySelector('#coffees');
 let roastSelection = document.querySelector('#roast-selection');
 
