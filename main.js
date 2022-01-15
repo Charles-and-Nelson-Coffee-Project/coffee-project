@@ -94,6 +94,7 @@ function addACoffee() {
     coffees.push(newCoffeeInfo);
     tbody.innerHTML = renderCoffees(coffees);
     localStorage.setItem('coffees', JSON.stringify(coffees));
+    location.reload();
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
