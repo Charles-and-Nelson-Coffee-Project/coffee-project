@@ -154,13 +154,13 @@ function addACoffee() {
 
     // THESE NEXT THREE IFs REJECT NEW COFFEES WITH NO NAME, ROAST, OR ORIGIN
     if (newName === "") {
-        return;
+        return alert('Please enter a name before continuing.');
     }
     if (newRoast === "") {
-        return;
+        return alert('Please select a roast before continuing.');
     }
     if (newOrigin === "") {
-        return;
+        return alert('Please select a country of origin before continuing.');
 
         // AND NOW WE ASSIGN AN IMAGE TO EACH ONE BASED ON ITS SELECTED ROAST
     } else if (newRoast === 'light') {
