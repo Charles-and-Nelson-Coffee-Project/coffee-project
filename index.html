@@ -12,15 +12,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 <body id="body">
-<div class="text-center" id="toplinks"><a href="https://github.com/Charles-and-Nelson-Coffee-Project/coffee-project"
-                                          target="blank"><i class="bi bi-github"></i>&nbsp;Charles and Nelson Coffee
-    Project</a></div>
+
+<div class="text-center"><a href="https://github.com/Charles-and-Nelson-Coffee-Project/coffee-project" target="blank"><i class="bi bi-github"></i>&nbsp;Charles and Nelson Coffee Project</a></div>
+
 <div class="container-fluid text-left">
     <div class="jumbotron jumbotron-fluid">
         <h1 class="display-3 ml-5">Coffee!</h1>
         <p class="ml-5 lead">It's not just for breakfast anymore...</p>
     </div>
 </div>
+
 <div class="text-center">
     <form>
         <label for="roast-selection"></label>
@@ -46,35 +47,38 @@
             <option value="medium">medium</option>
             <option value="dark">dark</option>
         </select>
+        <select id="selectOrigin">
+            <option value="" disabled selected>Origin</option>
+            <option value="Other">Other</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Columbia">Columbia</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Peru">Peru</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Guatemala">Guatemala</option>
+        </select>
         <input type="submit" id="submitCoffee" value="Add it!" onclick="addACoffee()">
     </form>
 </div>
-<!--    <table>-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody id="coffees"></tbody>-->
-<!--    </table>-->
 
-<div class="mt-5 text-center px-0 px-md-5 container">
-    <div class="row" id="coffees">
+<div class="mt-5 text-center px-0 container">
+    <div id="coffees" class="d-flex justify-content-center align-items-start flex-wrap">
     </div>
 </div>
 
 <div class="text-center my-5">
-   <footer>
-       <p>Copyright &copy;2022 Charles and Nelson Coffee Project</p>
-   </footer>
+    <footer>
+        <p>Copyright &copy;2022 Charles and Nelson Coffee Project</p>
+    </footer>
 </div>
 
 <div class="text-center mb-5">
     <button id="reset-array-button" onclick="resetArray()">reset coffees</button>
     <button id="nelsonMessage" onclick="laughSound()">A message from Nelson</button>
-
 </div>
 
 <script src="main.js"></script>
