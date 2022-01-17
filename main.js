@@ -4,6 +4,7 @@
 let coffees = function () {
     if (localStorage.getItem("coffees") !== null) {
         return JSON.parse(localStorage.getItem("coffees"));
+
     } else {
         return [
             {
@@ -69,6 +70,15 @@ let coffees = function () {
         ]
     }
 }();
+
+window.onload = getIDs;
+
+function getIDs(){
+    coffees.forEach(function(coffee){
+        coffee.id = coffees.indexOf(coffee) + 1;
+    })
+}
+
 
 // THIS FUNCTION RESETS LOCALSTORAGE AND RELOADS THE PAGE
 function resetArray() {
