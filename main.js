@@ -86,14 +86,14 @@ function resetArray() {
     location.reload();
 }
 
-// THIS CREATES AN HTML STRING FOR EACH BEER RUN THROUGH IT
+// THIS CREATES AN HTML STRING FOR EACH COFFEE RUN THROUGH IT
 function renderCoffee(coffee) {
     let html = '<div class="coffee-box my-2 p-3 mx-0 mx-sm-auto">'
     html += '<div><h2 class="font-weight-bold">' + coffee.name + '</h2></div><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div><div>' + coffee.origin + '</div></div>';
     return html;
 }
 
-// THIS RUNS EACH BEER THROUGH THE ABOVE FUNCTION
+// THIS RUNS EACH COFFEE THROUGH THE ABOVE FUNCTION
 function renderCoffees(coffees) {
     let html = '';
     for (let i = 0; i < coffees.length; i++) {
