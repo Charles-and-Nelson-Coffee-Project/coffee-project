@@ -13,7 +13,28 @@
 </head>
 <body id="body">
 
-<div class="text-center"><a href="https://github.com/Charles-and-Nelson-Coffee-Project/coffee-project" target="blank"><i class="bi bi-github"></i>&nbsp;Charles and Nelson Coffee Project</a></div>
+<div class="text-center"><a href="https://github.com/Charles-and-Nelson-Coffee-Project/coffee-project" target="blank"><i class="bi bi-github"></i>&nbsp;Charles and Nelson Coffee Project</a><i class="bi bi-cart text-primary" id="checkout" data-toggle="modal" data-target="#exampleModalCenter"></i></div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Your Coffee Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="container-fluid text-left">
     <div class="jumbotron jumbotron-fluid">

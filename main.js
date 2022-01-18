@@ -198,7 +198,35 @@ let newCoffeeRoast = document.querySelector('#selectRoast');
 let newCoffeeOrigin = document.querySelector('#selectOrigin');
 let tbody = document.querySelector('#coffees');
 let roastSelection = document.querySelector('#roast-selection');
+let cartBody = document.getElementById('modal-body');
+
+
+
+
+
 
 // THIS GETS THE WHOLE THING STARTED ON RELOAD BY CALLING THE FUNCTION AND PLACING THE RETURN IN HTML
 tbody.innerHTML = renderCoffees(coffees);
+
+
+let coffeeBoxes = document.getElementsByClassName('coffee-box');
+// console.log(coffeeBoxes);
+for( let i = 0; i < coffeeBoxes.length; i++){
+    coffeeBoxes[i].addEventListener('click', addToCart);
+}
+
+
+let cart = [];
+function addToCart(){
+    console.log("you clicked a coffee");
+    cart.push(this.outerText);
+    alert("added to cart");
+    console.log(cart);
+    cartBody.textContent = cart;
+    console.log(cart);
+}
+
+
+
+
 

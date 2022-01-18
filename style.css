@@ -57,3 +57,10 @@ a {
     background-image: url("assets/istockphoto-1257531804-170667a.jpeg");
     background-size: cover;
 }
+.bi-cart{
+    float: right;
+    margin-right: 20px;
+    font-size: 1.5em;
+    /*color: blue;*/
+
+}
