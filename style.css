@@ -64,3 +64,7 @@ a {
     /*color: blue;*/
 
 }
+
+.modal-content *{
+    background-color: #F3F0E8;
+}

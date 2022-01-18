@@ -226,7 +226,7 @@ function addToCart(){
     let cartString = '';
     for( let i = 0; i < cart.length; i++){
 
-        cartString += '<h4>' + cart[i].outerText + '</h4>';
+        cartString += '<h4>' + cart[i].outerText + '<span>&nbsp;$5.99/lb</span></h4>';
     }
 
 
