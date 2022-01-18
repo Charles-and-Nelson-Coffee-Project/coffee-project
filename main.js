@@ -219,11 +219,18 @@ for( let i = 0; i < coffeeBoxes.length; i++){
 let cart = [];
 function addToCart(){
     console.log("you clicked a coffee");
-    cart.push(this.outerText);
+    cart.push(this);
     alert("added to cart");
     console.log(cart);
-    cartBody.textContent = cart;
-    console.log(cart);
+
+    let cartString = '';
+    for( let i = 0; i < cart.length; i++){
+
+        cartString += '<h4>' + cart[i].outerText + '</h4>';
+    }
+
+
+    cartBody.innerHTML = cartString;
 }
 
 
