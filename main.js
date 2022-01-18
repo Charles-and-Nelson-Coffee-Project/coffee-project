@@ -90,7 +90,6 @@ function resetArray() {
 function renderCoffee(coffee) {
     let html = '<div class="coffee-box my-2 p-3 mx-0 mx-sm-auto">'
     html += '<div><h2 class="font-weight-bold">' + coffee.name + '</h2></div><div><h3>' + coffee.roast + '</h3></div><div class="img-holder"><img class="img-fluid" src="' + coffee.image + '"></div><div>' + coffee.origin + '</div></div>';
-
     return html;
 }
 
@@ -146,6 +145,13 @@ function addACoffee() {
             }
         }
     }();
+    let newDarkIndex = function () {
+        for (let i = 0; i < coffees.length; i++) {
+            if (coffees[i].roast === 'dark') {
+                return i;
+            }
+        }
+    }();
 
     newCoffeeInfo.id = coffees.length + 1;
     newCoffeeInfo.name = newName;
@@ -171,7 +177,7 @@ function addACoffee() {
         coffees.splice(newIndex, 0, newCoffeeInfo);
     } else {
         newCoffeeInfo.image = "dark-roast.jpeg"
-        coffees.push(newCoffeeInfo);
+        coffees.splice(newDarkIndex, 0, newCoffeeInfo);
     }
 
     // RENDER THE COFFEES WITH THE NEW ONE INCLUDED, SEND THE ARRAY TO LOCALSTORAGE, AND RELOAD
